@@ -4,7 +4,7 @@ function homeController(){
         async index(req,res){
 
             const fresh = await Product.find()
-            console.log(fresh)
+            // console.log(fresh)
             return res.render('home', {fresh:fresh})
         }
     }
