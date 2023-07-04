@@ -11,7 +11,8 @@ const flash = require('express-flash');
 const MongoDbStore = require('connect-mongo');
 const passport = require('passport')
 
-const url = 'mongodb://localhost:27017/shakti';
+
+const url = 'mongodb+srv://gaurav:test123@cluster0.s0vns9c.mongodb.net/shakti';
 mongoose.connect(url, { useNewUrlParser: true });
 const connection = mongoose.connection;
 connection.once('open', () => {
@@ -22,7 +23,7 @@ connection.once('open', () => {
 app.use(session({
     secret: process.env.COOKIE_SECRET,
     resave:false,
-    store: MongoDbStore.create({ mongoUrl: 'mongodb://localhost:27017/shakti' }),
+    store: MongoDbStore.create({ mongoUrl: 'mongodb+srv://gaurav:test123@cluster0.s0vns9c.mongodb.net/shakti' }),
     saveUnintialized: false,
     cookie: { maxAge: 1000*60*60*24}
 
@@ -57,14 +58,6 @@ app.use(express.static('public'));
 
 
 require('./routes/web')(app)
-
-
-
-
-
-
-
-
 
 
 
