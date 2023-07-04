@@ -261,7 +261,6 @@ nav li a:hover {
 
 section.main {
   background: #F6F6EB;
-  min-height: calc(100vh - 86px);
 }
 
 .size {
@@ -304,4 +303,10 @@ section.login a:hover {
 .noty_theme__mint {
   border-radius: 50px !important;
   padding-left: 8px !important;
+}
+
+@media (max-width: 1060px) {
+  .container {
+    max-width: 90%;
+  }
 }
